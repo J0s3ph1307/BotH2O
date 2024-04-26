@@ -1,0 +1,62 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Hemos iniciado sesión como {bot.user}')
+
+@bot.command()
+async def hola(ctx):
+    await ctx.channel.send("Hola soy un bot que vino a ayudarte a cuidar el agua")
+
+@bot.command()
+async def chao(ctx):
+    await ctx.channel.send("Adios!")
+
+@bot.command()
+async def consejo(ctx):
+    await ctx.channel.send("reutiliza el agua de la lavadora") 
+
+@bot.command()
+async def racionamiento(ctx):
+    await ctx.channel.send("https://www.eltiempo.com/bogota/rotacion-de-dias-de-racionamiento-de-agua-en-bogota-ojo-con-los-turnos-del-20-de-abril-3335132#:~:text=Jueves%2025%20de%20abril%3A%20turno,28%20de%20abril%3A%20turno%209.")
+
+@bot.command()
+async def clima(ctx):
+    await ctx.channel.send("El tratamiento de aguas residuales también contribuye al cambio climático, ya que genera gases de efecto invernadero que representan entre un 3% y un 7% de todas las emisiones contaminantes. Además, se estima que, entre el 80% y el 90 % de éstas se liberan al medio ambiente sin ningún tipo de tratamiento")
+
+@bot.command()
+async def dato1(ctx):
+    await ctx.channel.send("https://www.iagua.es/sites/default/files/styles/thumbnail-830xxxx/public/info.jpg")
+
+@bot.command()
+async def info(ctx):
+    await ctx.channel.send("El agua es la sustancia que más abunda en la Tierra y es la única que se encuentra en la atmósfera en estado líquido, sólido y gaseoso. La mayor reserva de agua está en los océanos, que contienen el 97% del agua que existe en la Tierra. Se trata de agua salada, que sólo permite la vida de la flora y fauna marina.")
+
+@bot.command()
+async def curiosidad(ctx):
+    await ctx.channel.send("El agua disuelve más sustancias que cualquier otro líquido. Cada día, el Sol evapora más de un billón de toneladas de agua, que permanece en la atmósfera hasta que vuelve a la superficie en forma de precipitaciones. Un solo árbol pierde por evaporación 265 litros de agua por día.")
+
+@bot.command()
+async def dato2(ctx):
+    await ctx.channel.send("https://lh3.googleusercontent.com/XxYGEjWFiIdPCuseTj6UcSe7nw2btB_NFfaATbGoxFvEzDS3CRFotadj_G4a-fhsxZmUfeU=s151")
+
+@bot.command()
+async def purifica(ctx):
+    await ctx.channel.send("la manera mas rapida y sencilla para purificar agua, es hervirla claro con el unico incombeniente de que el agua no va a saber bien. Se pueden usar filtros pero esto mas que nada es para purificar agua sucia pero no contaminada ya que los filtros solo puede contener la mugre y suciedad del agua pero no las bacterias")
+
+@bot.command()
+async def en_caso_de_tomar_agua_contaminada(ctx):
+    await ctx.channel.send("En caso de beber agua contaminada, se debe consultar el médico general o acudir al puesto de emergencias si surgen algunos de los siguientes síntomas:Dolor o cólicos abdominales,Náuseas,Vómitos,Diarrea aguda e intensa o leve y persistente,Diarrea acuosa o con moco,Hinchazón abdominal,Dolor en el cuerpo,Dolor de cabeza,Dolor en los ojos,Pérdida de apetito,Fiebre,Malestar general")
+
+@bot.command()
+async def contaminacion(ctx):
+    await ctx.channel.send("Como consecuencia del fenómeno de la escorrentía superficial o a la filtración a través del suelo, estos residuos llegan a contaminar las aguas subterráneas y terminan en ecosistemas acuáticos como los de agua dulce.")
+
+bot.run("por alguna rason no me deja poner mi token en el git")
